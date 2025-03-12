@@ -4,13 +4,16 @@
 
 #include "adventOfCode_2024.h"
 #include "src/day1/day1.h"
+#include "lib/PathUtils.cpp"
 
 using namespace std;
 namespace fs = std::filesystem;
+using namespace PathUtils;
 
-int main()
-{
-	cout << "Hello CMake.\n";
-	day1 day;
-	return day.run(fs::current_path().append("..").append("..").append(".."));
+int main() {
+	const int dayIndex = 1;
+	ADay* a[dayIndex] = {
+		new day1(getResourcesPath(dayIndex))
+			};
+	return a[dayIndex-1]->run();
 }

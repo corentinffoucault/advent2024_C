@@ -1,13 +1,12 @@
-// adventOfCode_2024.h : fichier Include pour les fichiers Include système standard,
-// ou les fichiers Include spécifiques aux projets.
-
 #include <filesystem>
+#include "../ADay.cpp"
 
-#pragma once
 using namespace std;
 namespace fs = std::filesystem;
 
-class day1 {
+class day1: public ADay {
     public:
-        int run(fs::path currentPath);
+        day1(fs::path _currentPath);
+        ~day1();
+        int run();
 };
