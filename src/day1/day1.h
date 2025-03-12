@@ -8,5 +8,5 @@ class day1: public ADay {
     public:
         day1(fs::path _currentPath);
         ~day1();
-        int run();
+        string run();
 };

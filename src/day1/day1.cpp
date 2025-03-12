@@ -9,8 +9,8 @@
 
 
 using namespace std;
-namespace fs = std::filesystem;
-using Container = std::vector<std::string>;
+namespace fs = filesystem;
+using Container = vector<string>;
 
 day1::day1(fs::path _currentPath) : ADay(_currentPath) {
     
@@ -19,11 +19,11 @@ day1::day1(fs::path _currentPath) : ADay(_currentPath) {
 day1::~day1() {
 }
 
-int day1::run() {
+string day1::run() {
     string my_text;
-    std::vector<int> part1;
-    std::vector<int> part2;
-    std::regex delimiter{ "\\s+" };
+    vector<int> part1;
+    vector<int> part2;
+    regex delimiter{ "\\s+" };
     
     ifstream file_content(currentPath);
     while (getline(file_content, my_text)) {
@@ -41,6 +41,5 @@ int day1::run() {
         int_least64_t counter = count_if(part2.begin(), part2.end(), [&](long x) { return x == item; });
         result += item * counter;
     }
-    cout << "result: " << result << "\n";
-    return 0;
+    return to_string(result);
 }

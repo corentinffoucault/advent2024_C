@@ -15,5 +15,6 @@ int main() {
 	ADay* a[dayIndex] = {
 		new day1(getResourcesPath(dayIndex))
 			};
-	return a[dayIndex-1]->run();
+	cout << "result day " << dayIndex << " " << a[dayIndex - 1]->run();
+	return 0;
 }

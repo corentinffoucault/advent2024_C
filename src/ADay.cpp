@@ -9,7 +9,7 @@ class ADay {
             currentPath = _currentPath;
         }
         ~ADay() {}
-        virtual int run() = 0;
+        virtual string run() = 0;
     protected:
         fs::path currentPath;
 };
