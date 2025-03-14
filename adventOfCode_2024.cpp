@@ -4,6 +4,7 @@
 
 #include "adventOfCode_2024.h"
 #include "src/day1/day1.h"
+#include "src/day2/day2.h"
 #include "lib/PathUtils.cpp"
 
 using namespace std;
@@ -11,10 +12,11 @@ namespace fs = std::filesystem;
 using namespace PathUtils;
 
 int main() {
-	const int dayIndex = 1;
-	ADay* a[dayIndex] = {
-		new day1(getResourcesPath(dayIndex))
+	int dayIndex = 1;
+	ADay* a[2] = {
+		new day1(getResourcesPath(1)),
+		new day2(getResourcesPath(2))
 			};
-	cout << "result day " << dayIndex << " " << a[dayIndex - 1]->run();
+	cout << "result day " << dayIndex + 1 << " " << a[dayIndex]->run();
 	return 0;
 }

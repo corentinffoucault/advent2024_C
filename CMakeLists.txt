@@ -1,10 +1,27 @@
 cmake_minimum_required(VERSION 3.10)
+
+# Add additional compiler flags
+# Built-ins:
+#   - CMAKE_CXX_FLAGS_DEBUG = -g
+#   - CMAKE_CXX_FLAGS_RELEASE = -O3 -NDEBUG
+set(CMAKE_CXX_FLAGS "-Wall /EHs")
 set(CMAKE_CXX_STANDARD 20) 
 
 project(advent2024)
 
-add_library(PathUtils "lib/PathUtils.cpp")
+set(CMAKE_BINARY_DIR ${CMAKE_SOURCE_DIR}/build)
+set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR})
+# On inclut notre bibliothèque dans le processus de CMake
+add_subdirectory(src)
+add_subdirectory(lib)
 
-add_executable(adventOfCode_2024 adventOfCode_2024.cpp src/day1/day1.cpp "src/ADay.cpp")
+# Crée des variables avec les fichiers à compiler
+set(SRCS
+    adventOfCode_2024.cpp
+    )
+    
+# Notre exécutable
+add_executable(main ${SRCS})
 
-target_include_directories( adventOfCode_2024 PUBLIC day/day1 ) 
+# Et pour que l'exécutable fonctionne, il faut lui indiquer la bibliothèque dont il dépend
+target_link_libraries(main lib day1 day2)

@@ -1,5 +1,5 @@
 #include <filesystem>
-#include "../ADay.cpp"
+#include "../ADay/ADay.h"
 
 using namespace std;
 namespace fs = std::filesystem;
@@ -7,6 +7,7 @@ namespace fs = std::filesystem;
 class day1: public ADay {
     public:
         day1(fs::path _currentPath);
+        string run() override;
+    protected:
         ~day1();
-        string run();
 };
