@@ -19,9 +19,10 @@ class day3: public ADay {
     public:
         day3(fs::path _currentPath);
         string run() override;
+        string run2() override;
     protected:
         ~day3();
     private:
-		void analyzeLine(string line, multiplyReaderState *currentState);
+		void analyzeLine(string line, multiplyReaderState *currentState) const;
         regex mulFinder{ "mul\\(([0-9]{0,3}),([0-9]{0,3})\\)|do\\(\\)|don't\\(\\)" };
 };

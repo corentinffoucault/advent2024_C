@@ -22,6 +22,10 @@ day3::~day3() {
 }
 
 string day3::run() {
+    return "erased";
+}
+
+string day3::run2() {
     string my_text;
     multiplyReaderState* currentState = new multiplyReaderState();
     
@@ -33,7 +37,7 @@ string day3::run() {
     return to_string(currentState->currentValue);
 }
 
-void day3::analyzeLine(string line, multiplyReaderState* currentState) {
+void day3::analyzeLine(string line, multiplyReaderState* currentState) const {
     auto words_begin = sregex_iterator(line.begin(), line.end(), mulFinder);
     auto words_end = std::sregex_iterator();
 

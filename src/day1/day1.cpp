@@ -20,6 +20,10 @@ day1::~day1() {
 }
 
 string day1::run() {
+    return "erased";
+}
+
+string day1::run2() {
     string my_text;
     vector<int> part1;
     vector<int> part2;

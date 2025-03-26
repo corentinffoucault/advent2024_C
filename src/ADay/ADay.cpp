@@ -9,3 +9,6 @@ ADay::ADay(fs::path _currentPath) {
 string ADay::run() {
 	return "0";
 }
+string ADay::run2() {
+	return "0";
+}

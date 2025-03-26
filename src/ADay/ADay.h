@@ -9,6 +9,7 @@ struct ADay {
     public:
         ADay(fs::path _currentPath);
         virtual string run() = 0;
+        virtual string run2() = 0;
     protected:
         ~ADay() {}
         fs::path currentPath;

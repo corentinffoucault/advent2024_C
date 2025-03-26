@@ -21,7 +21,12 @@ day2::day2(fs::path _currentPath) : ADay(_currentPath) {
 day2::~day2() {
 }
 
+
 string day2::run() {
+    return "erased";
+}
+
+string day2::run2() {
     string my_text;
     long nbSafe = 0;
     
@@ -44,8 +49,8 @@ bool day2::isSafe(string my_text) {
         return false;
     }
 
-    for (int index = 0; index < splittedLine.size(); index++) {
-        if (isSafeList(splittedLine, index).size() == 0) {
+    for (size_t index = 0; index < splittedLine.size(); index++) {
+        if (isSafeList(splittedLine, index).empty()) {
             return true;
         }
     }
@@ -54,15 +59,13 @@ bool day2::isSafe(string my_text) {
 }
 
 
-vector<int> day2::isSafeList(Container splittedLine, int dropIndex) {
+vector<size_t> day2::isSafeList(Container splittedLine, size_t dropIndex) {
     Container currentList = splittedLine;
-    if (dropIndex != -1) {
-        currentList = copyWithoutIndex(splittedLine, dropIndex);
-    }
+    currentList = copyWithoutIndex(splittedLine, dropIndex);
 
     int order = 0;
-    vector<int> indexInError = {};
-    for (int index = 0; index < currentList.size()-1; index++) {
+    vector<size_t> indexInError = {};
+    for (size_t index = 0; index < currentList.size()-1; index++) {
         int previousItem = stol(currentList[index]);
         int currentItem = stol(currentList[index + 1]);
 
@@ -91,7 +94,7 @@ vector<T> day2::copyWithoutIndex(const std::vector<T>& input, size_t index) {
     result.reserve(input.size() - 1); // Réserver de l'espace pour éviter les réallocations
 
     std::copy_if(input.begin(), input.end(), std::back_inserter(result),
-        [index, &input, i = 0](const T&) mutable { return i++ != index; });
+        [index, &input, i = (size_t)0](const T&) mutable { return i++ != index; });
 
     return result;
 }
