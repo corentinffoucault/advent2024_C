@@ -1,10 +1,8 @@
-#include <iostream>
-#include <fstream>
-#include <string>
 #include <filesystem>
+#include <iostream>
 #include <regex>
-#include <stdint.h>
 #include <set>
+#include <string>
 
 
 #include "day2.h"

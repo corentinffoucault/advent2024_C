@@ -1,5 +1,7 @@
 #include <filesystem>
 #include <set>
+#include <string>
+#include <vector>
 
 #include "../ADay/ADay.h"
 

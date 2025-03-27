@@ -1,9 +1,8 @@
-#include <iostream>
-#include <fstream>
-#include <string>
 #include <filesystem>
+#include <fstream>
+#include <iostream>
 #include <regex>
-#include <stdint.h>
+#include <string>
 
 #include "day1.h"
 
