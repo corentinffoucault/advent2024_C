@@ -2,11 +2,8 @@
 #include <fstream>
 #include <string>
 #include <filesystem>
-#include <regex>
-#include <stdint.h>
-#include <set>
+#include <fstream>
 #include <algorithm>
-#include <locale>
 
 #include "day4.h"
 

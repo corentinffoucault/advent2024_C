@@ -2,14 +2,15 @@
 cmake_minimum_required(VERSION  3.10)
 
 # Notre projet est étiqueté libPerso
-project(libPerso)
+project(Point2D)
 
 # Crée des variables avec les fichiers à compiler
 set(SRCS
-    PathUtils.cpp
+    Point2D.cpp
     )
 
-add_library(lib ${SRCS} ${HEADERS})
-    
-add_subdirectory(point2D)
+set(HEADERS
+    Point2D.h
+    )
 
+add_library(Point2D ${SRCS} ${HEADERS})

@@ -3,10 +3,9 @@
 #include <regex>
 #include <set>
 #include <string>
-
+#include <fstream>
 
 #include "day2.h"
-
 
 using namespace std;
 namespace fs = filesystem;

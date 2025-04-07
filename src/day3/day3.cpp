@@ -1,6 +1,7 @@
 #include <filesystem>
 #include <regex>
 #include <string>
+#include <fstream>
 
 #include "day3.h"
 
@@ -33,6 +34,9 @@ string day3::run2() {
 }
 
 void day3::analyzeLine(string line, multiplyReaderState* currentState) const {
+	auto words_begin = sregex_iterator(line.begin(), line.end(), mulFinder);
+	auto words_end = std::sregex_iterator();
+
 	for (std::sregex_iterator item = words_begin; item != words_end; ++item) {
 		smatch match = *item;
 		string match_str = match.str();
