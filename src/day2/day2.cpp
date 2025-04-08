@@ -1,11 +1,12 @@
 #include <filesystem>
+#include <fstream>
 #include <iostream>
 #include <regex>
 #include <set>
 #include <string>
-#include <fstream>
 
 #include "day2.h"
+#include <cstdint>
 
 using namespace std;
 namespace fs = filesystem;
@@ -25,7 +26,7 @@ string day2::run() {
 
 string day2::run2() {
     string my_text;
-    long nbSafe = 0;
+    int_least64_t nbSafe = 0;
     
     ifstream file_content(currentPath);
     while (getline(file_content, my_text)) {

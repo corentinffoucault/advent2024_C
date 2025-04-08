@@ -7,9 +7,10 @@ project(libPerso)
 # Crée des variables avec les fichiers à compiler
 set(SRCS
     PathUtils.cpp
+    StringUtils.cpp
     )
 
-add_library(lib ${SRCS} ${HEADERS})
+add_library(libPerso ${SRCS} ${HEADERS})
     
 add_subdirectory(point2D)
 

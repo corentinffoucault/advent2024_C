@@ -40,8 +40,8 @@ string day1::run2() {
     sort(part1.begin(), part1.end());
     sort(part2.begin(), part2.end());
     int_least64_t result = 0;
-    for(long item : part1) {
-        int_least64_t counter = count_if(part2.begin(), part2.end(), [&](long x) { return x == item; });
+    for(int item : part1) {
+        int_least64_t counter = count_if(part2.begin(), part2.end(), [&](int x) { return x == item; });
         result += item * counter;
     }
     return to_string(result);
