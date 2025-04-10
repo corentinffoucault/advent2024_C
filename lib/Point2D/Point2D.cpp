@@ -1,5 +1,7 @@
+#include "Point2D.h"
 
 #include "Point2D.h"
+#include <format>
 
 Point2D::Point2D(int _x, int _y) {
 	x = _x;
@@ -33,8 +35,8 @@ bool Point2D::operator<(const Point2D& other) const {
 Point2D::~Point2D() {
 }
 
-string Point2D::toString() {
-	return "$x $y";
+string Point2D::toString() const {
+	return format("{} {}", x, y);
 }
 
 const Point2D Point2DDirection::North = Point2D(0, -1);

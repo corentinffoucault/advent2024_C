@@ -9,7 +9,7 @@ public:
     Point2D(int _x, int _y);
     int getX();
     int getY();
-    string toString();
+    string toString() const;
     Point2D operator+(const Point2D& other) const;
     Point2D operator-(const Point2D& other) const;
     Point2D operator*(const int value) const;
