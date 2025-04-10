@@ -10,7 +10,7 @@ namespace fs = std::filesystem;
 
 class day7Data {
 public:
-    vector<Equation> equations;
+    vector<shared_ptr<Equation>> equations;
 };
 
 class day7: public ADay {
@@ -22,4 +22,5 @@ class day7: public ADay {
         ~day7();
     private:
         day7Data createData();
+        day7Data createData2();
 };

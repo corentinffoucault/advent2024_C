@@ -29,23 +29,10 @@ int_least64_t Equation::solve() {
 	return  solveLoop(params[0], 1) ? result : 0L;
 }
 
-int_least64_t Equation::solveV2() {
-	if (params.size() == 1) {
-		return  result == params[0] ? result : 0L;
-	}
-	return  solveLoop(params[0], 1, true) ? result : 0L;
-}
-
-bool Equation::solveLoop(int_least64_t currentRes, int currentIndex, bool useConcat) {
+bool Equation::solveLoop(int_least64_t currentRes, int currentIndex) {
 	int_least64_t mul = currentRes * params[currentIndex];
 	int_least64_t sum = currentRes + params[currentIndex];
 	int_least64_t concat = 0;
-
-	if (useConcat) {
-		stringstream strstream;
-		strstream << currentRes << params[currentIndex];
-		strstream >> concat;
-	}
 
 	if (currentIndex == params.size() - 1) {
 		return mul == result || sum == result || concat == result;
@@ -53,13 +40,37 @@ bool Equation::solveLoop(int_least64_t currentRes, int currentIndex, bool useCon
 
 	bool tmp = false;
 	if (mul <= result) {
-		tmp = tmp || solveLoop(mul, currentIndex + 1, useConcat);
+		tmp = tmp || solveLoop(mul, currentIndex + 1);
 	}
 	if (sum <= result) {
-		tmp = tmp || solveLoop(sum, currentIndex + 1, useConcat);
+		tmp = tmp || solveLoop(sum, currentIndex + 1);
 	}
-	if (useConcat && concat <= result) {
-		tmp = tmp || solveLoop(concat, currentIndex + 1, true);
+
+	return tmp;
+}
+
+bool EquationWithoutConcat::solveLoop(int_least64_t currentRes, int currentIndex) {
+	int_least64_t mul = currentRes * params[currentIndex];
+	int_least64_t sum = currentRes + params[currentIndex];
+	int_least64_t concat = 0;
+
+	stringstream strstream;
+	strstream << currentRes << params[currentIndex];
+	strstream >> concat;
+
+	if (currentIndex == params.size() - 1) {
+		return mul == result || sum == result || concat == result;
+	}
+
+	bool tmp = false;
+	if (mul <= result) {
+		tmp = tmp || solveLoop(mul, currentIndex + 1);
+	}
+	if (sum <= result) {
+		tmp = tmp || solveLoop(sum, currentIndex + 1);
+	}
+	if ( concat <= result) {
+		tmp = tmp || solveLoop(concat, currentIndex + 1);
 	}
 
 	return tmp;

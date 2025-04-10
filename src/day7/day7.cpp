@@ -25,17 +25,17 @@ day7::~day7() {
 string day7::run() {
 	day7Data data = createData();
 	int_least64_t result = 0L;
-	for (Equation equation : data.equations) {
-		result += equation.solve();
+	for (shared_ptr<Equation> equation : data.equations) {
+		result += equation->solve();
 	}
 	return to_string(result);
 }
 
 string day7::run2() {
-	day7Data data = createData();
+	day7Data data = createData2();
 	int_least64_t result = 0L;
-	for (Equation equation : data.equations) {
-		result += equation.solveV2();
+	for (shared_ptr<Equation> equation : data.equations) {
+		result += equation->solve();
 	}
 	return to_string(result);
 }
@@ -45,7 +45,19 @@ day7Data day7::createData() {
 	string line;
 	ifstream file_content(currentPath);
 	while (getline(file_content, line)) {
-		data.equations.push_back(Equation(line));
+		shared_ptr<Equation> tmp = make_shared<Equation>(line);
+		data.equations.push_back(tmp);
+	}
+	return data;
+}
+
+day7Data day7::createData2() {
+	day7Data data;
+	string line;
+	ifstream file_content(currentPath);
+	while (getline(file_content, line)) {
+		shared_ptr<EquationWithoutConcat> tmp = make_shared<EquationWithoutConcat>(line);
+		data.equations.push_back(tmp);
 	}
 	return data;
 }
