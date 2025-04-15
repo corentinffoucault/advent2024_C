@@ -8,6 +8,11 @@ Point2D::Point2D(int _x, int _y) {
 	y = _y;
 }
 
+Point2D::Point2D() {
+	x = 0;
+	y = 0;
+}
+
 int Point2D::getX() {
 	return this->x;
 }

@@ -7,6 +7,7 @@ using namespace std;
 class Point2D {
 public:
     Point2D(int _x, int _y);
+    Point2D();
     int getX();
     int getY();
     string toString() const;
