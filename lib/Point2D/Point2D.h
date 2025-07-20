@@ -15,6 +15,7 @@ public:
     Point2D operator-(const Point2D& other) const;
     Point2D operator*(const int value) const;
     bool operator<(const Point2D& other) const;
+    bool operator==(const Point2D& other) const;
     ~Point2D();
 private:
     int x;

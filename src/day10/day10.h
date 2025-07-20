@@ -8,11 +8,6 @@
 using namespace std;
 namespace fs = std::filesystem;
 
-class day10Data {
-public:
-    Topographic topo;
-};
-
 class day10: public ADay {
     public:
         day10(fs::path _currentPath);

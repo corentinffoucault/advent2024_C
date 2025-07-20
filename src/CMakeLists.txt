@@ -1,11 +1,8 @@
 
-# Nous voulons un cmake "récent" pour utiliser les dernières fonctionnalités
 cmake_minimum_required(VERSION  3.10)
 
-# Notre projet est étiqueté src
 project(days)
 
-# Crée des variables avec les fichiers à compiler
 add_subdirectory(ADay)
 add_subdirectory(day1)
 add_subdirectory(day2)
@@ -21,3 +18,4 @@ add_subdirectory(day11)
 add_subdirectory(day12)
 add_subdirectory(day13)
 add_subdirectory(day14)
+add_subdirectory(day15)

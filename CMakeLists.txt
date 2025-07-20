@@ -15,7 +15,7 @@ set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR})
 add_subdirectory(src)
 add_subdirectory(lib)
 
-# Crée des variables avec les fichiers à compiler
+
 set(SRCS
     adventOfCode_2024.cpp
     )
@@ -24,4 +24,4 @@ set(SRCS
 add_executable(main ${SRCS})
 
 # Et pour que l'exécutable fonctionne, il faut lui indiquer la bibliothèque dont il dépend
-target_link_libraries(main libPerso day1 day2 day3 day4 day5 day6 day7 day8 day9 day10 day11 day12 day13 day14)
+target_link_libraries(main libPerso day1 day2 day3 day4 day5 day6 day7 day8 day9 day10 day11 day12 day13 day14 day15)

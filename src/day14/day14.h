@@ -10,11 +10,6 @@
 using namespace std;
 namespace fs = std::filesystem;
 
-class day14Data {
-public:
-    Robot robot;
-};
-
 class day14: public ADay {
     public:
         day14(fs::path _currentPath);
