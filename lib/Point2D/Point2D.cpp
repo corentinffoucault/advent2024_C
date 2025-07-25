@@ -38,7 +38,7 @@ bool Point2D::operator<(const Point2D& other) const {
 }
 
 bool Point2D::operator==(const Point2D& other) const {
-	return this->x == other.x || this->y == other.y;
+	return this->x == other.x && this->y == other.y;
 }
 
 Point2D::~Point2D() {

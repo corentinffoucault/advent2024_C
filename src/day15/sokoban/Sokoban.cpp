@@ -1,11 +1,10 @@
-#include "Sokoban.h"
 #include <deque>
 #include <string>
 #include <vector>
+#include <utility>
 
 #include "../../../lib/Point2D/Point2D.h"
-#include "Sokoban.h";
-
+#include "Sokoban.h"
 
 Sokoban::Sokoban(Point2D _initialPoint, vector<string> _fullMap, vector<Point2D> _movements) : ASokoban(_initialPoint, _fullMap, _movements) {
 }
