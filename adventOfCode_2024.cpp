@@ -21,6 +21,7 @@
 #include "src/day16/day16.h"
 #include "src/day17/day17.h"
 #include "src/day18/day18.h"
+#include "src/day19/day19.h"
 #include "lib/PathUtils.cpp"
 
 using namespace std;
@@ -28,8 +29,8 @@ namespace fs = std::filesystem;
 using namespace PathUtils;
 
 int main() {
-	int dayIndex = 17;
-	ADay* a[18] = {
+	int dayIndex = 18;
+	ADay* a[19] = {
 		new day1(getResourcesPath(1)),
 		new day2(getResourcesPath(2)),
 		new day3(getResourcesPath(3)),
@@ -48,6 +49,7 @@ int main() {
 		new day16(getResourcesPath(16)),
 		new day17(getResourcesPath(17)),
 		new day18(getResourcesPath(18)),
+		new day19(getResourcesPath(19)),
 			};
 	cout << "result day " << dayIndex + 1 << " " << a[dayIndex]->run() << endl;
 	cout << "result2 day " << dayIndex + 1 << " " << a[dayIndex]->run2() << endl;
