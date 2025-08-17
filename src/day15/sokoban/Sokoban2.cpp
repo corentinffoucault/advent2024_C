@@ -79,10 +79,10 @@ vector<pair<Point2D, Point2D>> Sokoban2::analysePush(Point2D position, Point2D d
 			if (direction == Point2DDirection::South || direction == Point2DDirection::North) {
 				switch (fullMap[thisPosition.getY()][thisPosition.getX()]) {
 				case ']':
-					queue.push_back(thisPosition + Point2DDirection::East);
+					queue.push_back(thisPosition + Point2DDirection::West);
 					break;
 				case '[':
-					queue.push_back(thisPosition + Point2DDirection::West);
+					queue.push_back(thisPosition + Point2DDirection::East);
 					break;
 				}
 			}

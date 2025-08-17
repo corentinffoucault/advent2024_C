@@ -50,6 +50,6 @@ string Point2D::toString() const {
 
 const Point2D Point2DDirection::North = Point2D(0, -1);
 const Point2D Point2DDirection::South = Point2D(0, 1);
-const Point2D Point2DDirection::East = Point2D(-1, 0);
-const Point2D Point2DDirection::West = Point2D(1, 0);
+const Point2D Point2DDirection::East = Point2D(1, 0);
+const Point2D Point2DDirection::West = Point2D(-1, 0);
 const Point2D Point2DDirection::Origin = Point2D(0, 0);
