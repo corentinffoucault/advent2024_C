@@ -34,8 +34,19 @@ using namespace std;
 namespace fs = std::filesystem;
 using namespace PathUtils;
 
-int main() {
-	int dayIndex = 24;
+int main(int argc, char* argv[]) {
+	int dayIndex = 25;
+	if (argc < 2) {
+		cout << "Please provide the day index (1-25)" << endl;
+	} else {
+		dayIndex = stoi(argv[1]);
+		if (dayIndex < 1 || dayIndex > 25) {
+			cout << "Please provide a valid day index (1-25)" << endl;
+			return -1;
+		} else {
+			dayIndex = stoi(argv[1]);
+		}
+	}
 	ADay* a[25] = {
 		new day1(getResourcesPath(1)),
 		new day2(getResourcesPath(2)),
@@ -63,7 +74,7 @@ int main() {
 		new day24(getResourcesPath(24)),
 		new day25(getResourcesPath(25)),
 			};
-	cout << "result day " << dayIndex + 1 << " " << a[dayIndex]->run() << endl;
-	cout << "result2 day " << dayIndex + 1 << " " << a[dayIndex]->run2() << endl;
+	cout << "result day " << dayIndex << " " << a[dayIndex - 1]->run() << endl;
+	cout << "result2 day " << dayIndex << " " << a[dayIndex - 1]->run2() << endl;
 	return 0;
 }

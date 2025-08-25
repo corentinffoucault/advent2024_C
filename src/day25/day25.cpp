@@ -37,6 +37,7 @@ day25Data day25::createData() {
     smatch entryMatch;
     array<string, 7> block = {};
     size_t index = 0;
+	cout << "Reading file: " << currentPath << endl;
     while (getline(file_content, line)) {
         if (!line.empty()) {
             block[index++] = line;
